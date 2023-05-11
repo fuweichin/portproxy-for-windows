@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace portproxy
@@ -14,6 +16,31 @@ namespace portproxy
         public MainForm()
         {
             InitializeComponent();
+        }
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == NativeMethods.WM_SHOWME)
+            {
+                ShowAndActivate();
+            }
+            base.WndProc(ref m);
+        }
+        private void ShowAndActivate()
+        {
+            if (!this.Visible)
+            {
+                this.Show();
+            }
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            this.Activate();
+            this.TopMost = true;
+            Action<Task> cancelTopMost = (Task t) => {
+                this.TopMost = false;
+            };
+            Task.Delay(1000).ContinueWith(cancelTopMost);
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -269,7 +296,7 @@ namespace portproxy
                 int port = Convert.ToInt32(text);
                 return port >= 0 && port <= 65535;
             }
-            catch(FormatException e)
+            catch (FormatException)
             {
                 return false;
             }
@@ -346,6 +373,34 @@ namespace portproxy
         private void cmbDirection_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorProvider1.Clear();
+        }
+
+        private void ScaleListViewColumns(ListView listView, double dpr, double oldDpr)
+        {
+            foreach (ColumnHeader column in listView.Columns)
+            {
+                column.Width = (int)Math.Round(column.Width / oldDpr * dpr);
+            }
+        }
+
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            base.ScaleControl(factor, specified);
+            double oldDpr = 1;
+            double dpr = DeviceDpi / 96.0d;
+            ScaleListViewColumns(listRules, dpr, oldDpr);
+        }
+
+        private void MainForm_DpiChanged(object sender, DpiChangedEventArgs e)
+        {
+            double oldDpr = e.DeviceDpiOld / 96.0d;
+            double dpr = e.DeviceDpiNew / 96.0d;
+            ScaleListViewColumns(listRules, dpr, oldDpr);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

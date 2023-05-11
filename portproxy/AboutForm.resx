@@ -118,8 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>PortProxy for Windows is a port-redirect tool designed for beginners among developers/devops. It provides WinForms GUI, and uses Windows built-in netsh as underlying implmentation, to manage port redirections easily and efficiently.
-
-See also our PortProxy for Linux and PortProxy for macOS.</value>
+    <value>PortProxy for Windows is a port-redirect tool designed for beginners among developers/devops. It provides WinForms GUI, and uses Windows built-in netsh as underlying implmentation, to manage port redirections easily and efficiently.</value>
   </data>
 </root>

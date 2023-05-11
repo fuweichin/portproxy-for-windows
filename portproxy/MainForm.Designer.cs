@@ -69,12 +69,13 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(741, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(741, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,20 +85,20 @@
             this.tsmiImport,
             this.tsmiExport});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // tsmiImport
             // 
             this.tsmiImport.Name = "tsmiImport";
-            this.tsmiImport.Size = new System.Drawing.Size(116, 22);
+            this.tsmiImport.Size = new System.Drawing.Size(110, 22);
             this.tsmiImport.Text = "&Import";
             this.tsmiImport.Click += new System.EventHandler(this.tsmiImport_Click);
             // 
             // tsmiExport
             // 
             this.tsmiExport.Name = "tsmiExport";
-            this.tsmiExport.Size = new System.Drawing.Size(116, 22);
+            this.tsmiExport.Size = new System.Drawing.Size(110, 22);
             this.tsmiExport.Text = "&Export";
             this.tsmiExport.Click += new System.EventHandler(this.tsmiExport_Click);
             // 
@@ -106,13 +107,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // tsmiAbout
             // 
             this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(111, 22);
+            this.tsmiAbout.Size = new System.Drawing.Size(107, 22);
             this.tsmiAbout.Text = "&About";
             this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
@@ -138,6 +139,7 @@
             this.colConnectport,
             this.colProtocol});
             this.listRules.FullRowSelect = true;
+            this.listRules.HideSelection = false;
             this.listRules.Location = new System.Drawing.Point(9, 20);
             this.listRules.Name = "listRules";
             this.listRules.Size = new System.Drawing.Size(694, 175);
@@ -224,7 +226,7 @@
             this.lblConnectaddress.AutoSize = true;
             this.lblConnectaddress.Location = new System.Drawing.Point(301, 20);
             this.lblConnectaddress.Name = "lblConnectaddress";
-            this.lblConnectaddress.Size = new System.Drawing.Size(95, 12);
+            this.lblConnectaddress.Size = new System.Drawing.Size(95, 15);
             this.lblConnectaddress.TabIndex = 1;
             this.lblConnectaddress.Text = "Connect address";
             // 
@@ -233,7 +235,7 @@
             this.lblProtocol.AutoSize = true;
             this.lblProtocol.Location = new System.Drawing.Point(494, 20);
             this.lblProtocol.Name = "lblProtocol";
-            this.lblProtocol.Size = new System.Drawing.Size(53, 12);
+            this.lblProtocol.Size = new System.Drawing.Size(52, 15);
             this.lblProtocol.TabIndex = 1;
             this.lblProtocol.Text = "Protocol";
             // 
@@ -242,7 +244,7 @@
             this.lblConnectport.AutoSize = true;
             this.lblConnectport.Location = new System.Drawing.Point(411, 20);
             this.lblConnectport.Name = "lblConnectport";
-            this.lblConnectport.Size = new System.Drawing.Size(77, 12);
+            this.lblConnectport.Size = new System.Drawing.Size(77, 15);
             this.lblConnectport.TabIndex = 1;
             this.lblConnectport.Text = "Connect port";
             // 
@@ -251,7 +253,7 @@
             this.lblListenport.AutoSize = true;
             this.lblListenport.Location = new System.Drawing.Point(216, 20);
             this.lblListenport.Name = "lblListenport";
-            this.lblListenport.Size = new System.Drawing.Size(71, 12);
+            this.lblListenport.Size = new System.Drawing.Size(63, 15);
             this.lblListenport.TabIndex = 1;
             this.lblListenport.Text = "Listen port";
             // 
@@ -260,7 +262,7 @@
             this.lblListenaddres.AutoSize = true;
             this.lblListenaddres.Location = new System.Drawing.Point(106, 20);
             this.lblListenaddres.Name = "lblListenaddres";
-            this.lblListenaddres.Size = new System.Drawing.Size(89, 12);
+            this.lblListenaddres.Size = new System.Drawing.Size(81, 15);
             this.lblListenaddres.TabIndex = 1;
             this.lblListenaddres.Text = "Listen address";
             // 
@@ -269,7 +271,7 @@
             this.lblDirection.AutoSize = true;
             this.lblDirection.Location = new System.Drawing.Point(7, 20);
             this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(59, 12);
+            this.lblDirection.Size = new System.Drawing.Size(55, 15);
             this.lblDirection.TabIndex = 0;
             this.lblDirection.Text = "Direction";
             // 
@@ -284,7 +286,7 @@
             "v6tov6"});
             this.cmbDirection.Location = new System.Drawing.Point(7, 37);
             this.cmbDirection.Name = "cmbDirection";
-            this.cmbDirection.Size = new System.Drawing.Size(70, 20);
+            this.cmbDirection.Size = new System.Drawing.Size(70, 23);
             this.cmbDirection.TabIndex = 2;
             this.cmbDirection.SelectedIndexChanged += new System.EventHandler(this.cmbDirection_SelectedIndexChanged);
             // 
@@ -292,7 +294,7 @@
             // 
             this.txtListenaddress.Location = new System.Drawing.Point(108, 37);
             this.txtListenaddress.Name = "txtListenaddress";
-            this.txtListenaddress.Size = new System.Drawing.Size(104, 21);
+            this.txtListenaddress.Size = new System.Drawing.Size(104, 23);
             this.txtListenaddress.TabIndex = 2;
             this.txtListenaddress.Validating += new System.ComponentModel.CancelEventHandler(this.txtListenaddress_Validating);
             // 
@@ -300,7 +302,7 @@
             // 
             this.txtListenport.Location = new System.Drawing.Point(218, 37);
             this.txtListenport.Name = "txtListenport";
-            this.txtListenport.Size = new System.Drawing.Size(45, 21);
+            this.txtListenport.Size = new System.Drawing.Size(45, 23);
             this.txtListenport.TabIndex = 2;
             this.txtListenport.Validating += new System.ComponentModel.CancelEventHandler(this.txtListenport_Validating);
             // 
@@ -308,7 +310,7 @@
             // 
             this.txtConnectaddress.Location = new System.Drawing.Point(303, 37);
             this.txtConnectaddress.Name = "txtConnectaddress";
-            this.txtConnectaddress.Size = new System.Drawing.Size(104, 21);
+            this.txtConnectaddress.Size = new System.Drawing.Size(104, 23);
             this.txtConnectaddress.TabIndex = 2;
             this.txtConnectaddress.Validating += new System.ComponentModel.CancelEventHandler(this.txtConnectaddress_Validating);
             // 
@@ -316,7 +318,7 @@
             // 
             this.txtConnectport.Location = new System.Drawing.Point(413, 37);
             this.txtConnectport.Name = "txtConnectport";
-            this.txtConnectport.Size = new System.Drawing.Size(45, 21);
+            this.txtConnectport.Size = new System.Drawing.Size(45, 23);
             this.txtConnectport.TabIndex = 2;
             this.txtConnectport.Validating += new System.ComponentModel.CancelEventHandler(this.txtConnectport_Validating);
             // 
@@ -328,7 +330,7 @@
             "tcp"});
             this.cmbProtocol.Location = new System.Drawing.Point(496, 37);
             this.cmbProtocol.Name = "cmbProtocol";
-            this.cmbProtocol.Size = new System.Drawing.Size(70, 20);
+            this.cmbProtocol.Size = new System.Drawing.Size(70, 23);
             this.cmbProtocol.TabIndex = 2;
             // 
             // btnAdd
@@ -348,19 +350,22 @@
             // MainForm
             // 
             this.AcceptButton = this.btnAdd;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(741, 371);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "PortProxy";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.DpiChanged += new System.Windows.Forms.DpiChangedEventHandler(this.MainForm_DpiChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
